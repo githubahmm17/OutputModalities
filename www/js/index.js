@@ -11,12 +11,15 @@ $(document).on("pagecreate","#pageone",function(){
 function random() {
 var x = !Math.round(Math.random());
 $("#myText").text(x);
-return x;
+
+
+	if(x == true){
+	navigator.notification.beep(1);
+	}
+	if(x == false){
+	navigator.notification.beep(2);
+	}
+	
+	return x;
 }
 
-if(x == true){
-	navigator.notification.beep(1);
-}
-if(x == false){
-	navigator.notification.beep(2);
-}
